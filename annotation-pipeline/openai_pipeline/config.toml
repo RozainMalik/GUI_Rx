@@ -1,0 +1,58 @@
+# Knobs for the OpenAI variant. Change models/effort only between batches.
+# These are the settings the released dataset was built with.
+
+[models]                      # per Call.kind; must be in oai/pricing.py's price table
+propose = "gpt-5.6-luna"
+describe = "gpt-5.6-luna"
+ground = "gpt-5.6-luna"
+verify = "gpt-5.6-luna"
+refine_ground = "gpt-5.6-luna"
+
+[effort]                      # reasoning.effort per kind: none | low | medium | high | xhigh | max
+                              # ground=low: calibration 48/60 at low and medium vs 41/60 at none (pixels)
+propose = "low"
+describe = "low"
+ground = "low"
+verify = "none"
+refine_ground = "none"
+
+[run]
+coord_mode = "pixels"         # pixels | thousand - calibrate both, keep the better (pixels won)
+concurrency = 8               # requests in flight
+frame_concurrency = 8         # frames in flight
+seed = 20260916
+early_stop = false
+transport = "sync"            # sync | batch - sync: ~$0.011/frame, a 1000-frame batch in hours.
+                              # batch: Batch API at 50 % off, but each round waits 1-2.5 h (~13.5 h per batch);
+                              # `run <id>` then does one step per call, `run <id> --wait` loops to the end
+poll_seconds = 60
+file_expiry_days = 30         # uploaded frame PNGs expire server-side; re-uploaded when needed
+part_mb = 48                  # a round's JSONL rolls into another job at this size
+
+[batches]
+sizes = [25, 50, 100, 250, 500, 1000]   # last value repeats to the end of the corpus
+gate = 0.75                       # approve below this correct-rate only with --force
+expected_apps = 30                # plan refuses until data/ holds this many app folders
+exclude_benchmark_apps = false    # true: plan draws only from the 24 apps outside the MedSPOT evaluation set
+balanced = true                   # every batch takes an equal share of each app's remaining frames
+
+[export]
+dataset = "gui_grounding"     # export/<dataset>[_all|_lowconf][_flat]/<dataset>_train*.json
+
+[caps]                        # USD; hard stops checked before and during every batch
+batch_usd = 0                 # 0 = max(2, 1.5 x projection) per batch
+run_usd = 20                  # total over every batch in work/ledger.jsonl; raise it deliberately
+
+[paths]                       # relative paths resolve against this file's folder; run `oai` from this folder
+data = "data"                 # <data>/<App>/<App>_NNN.png - the screenshots to annotate
+benchmark = "benchmark"       # MedSPOT benchmark (Annotations/, Images/) - used by `calibrate` only
+work = "work"                 # records, ledger, batches.json, markers (created on first use)
+export = "export"
+reports = "reports"           # overlays/<batch>/ and qc_stats
+image_root = "data"           # the prefix written into exported image_path values
+# shared_repo defaults to the checkout `annotator` was installed from (install it with pip -e)
+
+[remote]                      # only `init-data` uses this (pulls app folders over ssh); not needed when data/ is filled by hand
+login = "user@host"
+data = "AnnotationPipeline/MedSPOT_Training_Data"
+benchmark = "MedicalDataset"

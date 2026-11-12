@@ -1,0 +1,9 @@
+id: sspro@v1
+bench: sspro
+n_expected: 1581
+max_pixels: {1step: 14777616, 2step: 5760000}
+resize_to_pixels: {1step: 5760000, 2step: 0}
+crop: {kind: area, portion: 379456, ref_pixels: 5760000}
+zoom: 3.0
+source: training/eval/screenspot_pro_qwen35.py = upstream screenSpot_pro.py / screenSpot_pro_two_stage.py; crop rounded to adapter.crop_multiple
+flags: []

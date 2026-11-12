@@ -1,0 +1,9 @@
+id: oswg@v1
+bench: oswg
+n_expected: 564
+max_pixels: {1step: 5720064, 2step: 5720064}
+resize_to_pixels: {1step: 4161600, 2step: 4161600}
+crop: {kind: area, portion: 379456, ref_pixels: 5760000}
+zoom: 2.5
+source: upstream GUI-AIMA eval/osworld-g_two_stage.py (resize 2720x1530, max_pixels 5720064, zoom 2.5, crop area formula), OSWorld-G.json
+flags: []

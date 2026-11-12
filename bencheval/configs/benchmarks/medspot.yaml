@@ -1,0 +1,6 @@
+name: medspot
+data_subdir: medspot
+loader: medspot
+canonical: medspot@v1
+split_keys: []
+scorer: medspot

@@ -1,0 +1,9 @@
+id: uivision@v1
+bench: uivision
+n_expected: 5479
+max_pixels: {1step: 14777616, 2step: 5760000}
+resize_to_pixels: {1step: 5760000, 2step: 0}
+crop: {kind: area, portion: 379456, ref_pixels: 5760000}
+zoom: 3.0
+source: same as SS-Pro (no upstream script)
+flags: [protocol-borrowed-from-sspro]

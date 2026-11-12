@@ -1,0 +1,9 @@
+name: sspro
+data_subdir: screenspot_pro
+loader: sspro
+canonical: sspro@v1
+split_keys:
+- [group]
+- [group, ui_type]
+- [ui_type]
+scorer: pointbox

@@ -1,0 +1,5 @@
+# Clinical stage: 3,447 screenshots / 10,341 instruction-box pairs (scripts/convert_clinical.py). Paths relative to training/.
+datasets:
+  - json_path: data/clinical_train/all.json
+    images_folder: data/clinical_train/images/
+    sampling_strategy: "all"

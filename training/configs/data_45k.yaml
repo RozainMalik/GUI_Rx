@@ -1,0 +1,14 @@
+# The 45k ablation mix, built by scripts/build_ablation_45k.py. Paths relative to training/.
+datasets:
+  - json_path: data/ablation_45k/guiact.json
+    images_folder: data/ablation_45k/images/guiact/
+    sampling_strategy: "all"
+  - json_path: data/ablation_45k/androidcontrol.json
+    images_folder: data/ablation_45k/images/androidcontrol/
+    sampling_strategy: "all"
+  - json_path: data/ablation_45k/wave_ui.json
+    images_folder: data/ablation_45k/images/wave_ui/
+    sampling_strategy: "all"
+  - json_path: data/ablation_45k/uground.json
+    images_folder: data/ablation_45k/images/uground/
+    sampling_strategy: "all"

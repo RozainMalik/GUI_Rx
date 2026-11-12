@@ -1,0 +1,9 @@
+name: ssv2
+data_subdir: screenspot_v2_full
+loader: screenspot
+canonical: ssv2@v1
+split_keys:
+- [group]
+- [group, ui_type]
+- [ui_type]
+scorer: pointbox

@@ -1,0 +1,9 @@
+id: ssv2@v1
+bench: ssv2
+n_expected: 1272
+max_pixels: {1step: 5860400, 2step: 5860400}
+resize_to_pixels: {1step: 0, 2step: 0}
+crop: {kind: fixed, px: 616}
+zoom: 2.0
+source: training/eval/screenspot_v2_qwen35.py defaults (2-step = ground_two_step defaults, paper text 616px/2x)
+flags: [untuned-zoom]

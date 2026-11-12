@@ -1,0 +1,9 @@
+id: medspot@v1
+bench: medspot
+n_expected: 603
+max_pixels: {1step: 5860400, 2step: 5860400}
+resize_to_pixels: {1step: 0, 2step: 0}
+crop: {kind: fixed, px: 616}
+zoom: 2.0
+source: training/eval/medspot_strict_qwen35.py + vendored medspot_strict/core.py; 216 tasks / 603 evaluable steps
+flags: [untuned-zoom]

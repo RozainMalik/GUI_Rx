@@ -1,0 +1,9 @@
+id: ssv1@v1
+bench: ssv1
+n_expected: 1272
+max_pixels: {1step: 5860400, 2step: 5860400}
+resize_to_pixels: {1step: 0, 2step: 0}
+crop: {kind: fixed, px: 616}
+zoom: 2.0
+source: SS-v2 protocol (ssv2@v1) applied to ScreenSpot v1
+flags: [untuned-zoom]

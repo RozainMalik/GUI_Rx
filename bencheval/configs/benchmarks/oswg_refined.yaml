@@ -1,0 +1,7 @@
+name: oswg_refined
+data_subdir: osworld_g
+loader: osworld_g_refined
+canonical: oswg_refined@v1
+split_keys:
+- [category]
+scorer: osworld

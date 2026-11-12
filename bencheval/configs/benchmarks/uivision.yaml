@@ -1,0 +1,8 @@
+name: uivision
+data_subdir: ui_vision
+loader: ui_vision
+canonical: uivision@v1
+split_keys:
+- [group]
+- [ui_type]
+scorer: pointbox

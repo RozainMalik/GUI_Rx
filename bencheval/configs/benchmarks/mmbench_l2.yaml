@@ -1,0 +1,8 @@
+name: mmbench_l2
+data_subdir: mmbench_gui
+loader: mmbench_gui
+canonical: mmbench_l2@v1
+split_keys:
+- [group]
+- [group, app]
+scorer: pointbox

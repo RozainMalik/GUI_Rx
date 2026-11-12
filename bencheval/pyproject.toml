@@ -1,0 +1,10 @@
+[project]
+name = "benchev"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["pyyaml", "pillow"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["gpu: needs a CUDA GPU and the cluster venv"]
+addopts = "-m 'not gpu'"

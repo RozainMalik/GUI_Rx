@@ -1,0 +1,17 @@
+# Stage A: the GUI-AIMA lite mix, 254,779 records (scripts/build_mix.py). Paths relative to training/.
+datasets:
+  - json_path: data/full509k/guiact.json
+    images_folder: data/full509k/images/guiact/
+    sampling_strategy: "all"
+  - json_path: data/full509k/androidcontrol.json
+    images_folder: data/full509k/images/androidcontrol/
+    sampling_strategy: "all"
+  - json_path: data/full509k/wave_ui.json
+    images_folder: data/full509k/images/wave_ui/
+    sampling_strategy: "all"
+  - json_path: data/full509k/uground.json
+    images_folder: data/full509k/images/uground/
+    sampling_strategy: "all"
+  - json_path: data/full509k/gta.json
+    images_folder: data/full509k/images/gta/
+    sampling_strategy: "all"

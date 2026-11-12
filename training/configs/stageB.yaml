@@ -1,0 +1,6 @@
+# Stage B: GroundCUA, seed-0 sample of 250,000 records minus 20 whose box lies outside the
+# screenshot = 249,980 (scripts/build_groundcua.py).
+datasets:
+  - json_path: data/full509k/groundcua.json
+    images_folder: data/full509k/images/groundcua/
+    sampling_strategy: "all"
